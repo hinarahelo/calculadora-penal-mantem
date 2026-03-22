@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Penal TJ Snow</title>
+  <meta name="description" content="Calculadora Penal Oficial do Tribunal de Justiça de Snow">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="watermark"></div>
+
+  <header class="topbar">
+    <div class="topbar-line"></div>
+    <div class="topbar-inner">
+      <img src="logo-snow.png" class="topbar-logo">
+
+      <div class="topbar-text">
+        <span class="eyebrow">PODER JUDICIÁRIO</span>
+        <h1>TRIBUNAL DE JUSTIÇA DE SNOW</h1>
+        <p>Calculadora Penal Oficial</p>
+      </div>
+    </div>
+    <div class="topbar-line"></div>
+  </header>
+
+  <main class="app-shell">
+    <section class="main-grid">
+
+      <div class="left-column">
+        <section class="panel soft-panel">
+          <div class="panel-header">
+            <div>
+              <span class="section-kicker">CONSULTA</span>
+              <h3>Pesquisa de artigos</h3>
+            </div>
+          </div>
+
+          <div class="search-row">
+            <input id="searchInput" type="text" placeholder="Digite o número, nome ou termo do artigo">
+            <button id="searchButton" class="btn-primary">Pesquisar</button>
+          </div>
+
+          <div class="search-actions">
+            <button id="showAllButton" class="btn-secondary">Exibir todos os artigos</button>
+            <button id="clearSearchButton" class="btn-ghost">Limpar busca</button>
+          </div>
+
+          <div id="artigosContainer" class="articles-list" style="display: none;"></div>
+        </section>
+      </div>
+
+      <aside class="right-column">
+
+        <!-- 🔻 REDUÇÕES -->
+        <section class="panel side-panel">
+          <span class="section-kicker">REDUÇÕES DE PENA</span>
+          <h3>Redução aplicada</h3>
+
+          <div class="check-group">
+
+            <label>
+              <input type="checkbox" id="reducaoBomComportamento">
+              <strong> BOM COMPORTAMENTO</strong> — redução de <strong class="percent-green">5%</strong>
+            </label>
+
+            <label>
+              <input type="checkbox" id="reducaoReuPrimario">
+              <strong> RÉU PRIMÁRIO</strong> — redução de <strong class="percent-green">10%</strong>
+            </label>
+
+            <label>
+              <input type="checkbox" id="reducaoAdvogadoConstituido">
+              <strong> ADVOGADO CONSTITUÍDO</strong> — redução de <strong class="percent-green">20%</strong>
+            </label>
+
+            <label>
+              <input type="checkbox" id="reducaoCumplice">
+              <strong> CÚMPLICE</strong> — redução de <strong class="percent-green">15%</strong>
+            </label>
+
+          </div>
+        </section>
+
+        <!-- 💰 HONORÁRIOS -->
+        <section class="panel side-panel">
+          <span class="section-kicker">JURÍDICO</span>
+          <h3>Honorários</h3>
+
+          <div class="check-group">
+            <label>
+              <input type="checkbox" class="honorario" data-valor="10000">
+              Delegacia Sul — R$ 10.000
+            </label>
+
+            <label>
+              <input type="checkbox" class="honorario" data-valor="20000">
+              Delegacia Norte — R$ 20.000
+            </label>
+          </div>
+        </section>
+
+        <!-- 📄 SELECIONADOS -->
+        <section class="panel side-panel">
+          <span class="section-kicker">SELEÇÃO</span>
+          <h3>Artigos selecionados</h3>
+          <div id="selecionadosResumo" class="selection-summary">
+            Nenhum artigo selecionado.
+          </div>
+        </section>
+
+        <!-- ⚙️ AÇÕES -->
+        <section class="panel action-panel">
+          <button class="btn-primary btn-full" onclick="calcular()">Calcular Pena</button>
+          <button class="btn-secondary btn-full" onclick="limparCalculo()">Limpar Cálculo</button>
+        </section>
+
+      </aside>
+    </section>
+
+    <section id="resultado" class="judicial-document"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-line"></div>
+    <p>Documento Oficial – Tribunal de Justiça de Snow</p>
+    <span>Calculadora desenvolvida por Hinara Heloar</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
